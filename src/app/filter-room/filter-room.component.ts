@@ -6,7 +6,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Room } from '../model/room';
 import { GuestDetailsService } from '../service/guest-details.service';
 import Swal from 'sweetalert2';
-
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-filter-room',
@@ -51,6 +51,8 @@ export class FilterRoomComponent {
 
   }
 
+  
+
   onSubmit(filterAvailableDateForm: NgForm) {
     const params = new HttpParams()
       .set('checkinDate', this.availableDate.checkin)
@@ -61,7 +63,7 @@ export class FilterRoomComponent {
     console.log("To : " + this.dateDepart);
 
     this.isLoading = true
-    this.httpClient.get('http://localhost:8080/api/v1/bookings/list', { params }).subscribe(
+    this.httpClient.get('https://delorian-hotel.up.railway.app/api/v1/bookings/list', { params }).subscribe(
       (listrooms: any) => {
         this.isLoading = false
         this.isDateShow = true

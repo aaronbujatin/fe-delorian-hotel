@@ -15,6 +15,6 @@ export class RoomService {
   private readonly apiRoomUrl = environment.baseUrl
 
   getRoomById(id : number) : Observable<Room> {
-    return this.httpClient.get<Room>(`${this.apiRoomUrl}/${id}`);   
+    return this.httpClient.get<Room>(`${this.apiRoomUrl}/api/v1/rooms/${id}`);   
   }
 }
