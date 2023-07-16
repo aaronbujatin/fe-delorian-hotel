@@ -1,0 +1,38 @@
+<!--
+  Heads up! 👋
+
+  Plugins:
+    - @tailwindcss/forms
+-->
+<app-navbar></app-navbar>
+<section class="bg-gray-100">
+    <div class="mx-auto flex justify-center max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+        <div class="rounded-lg bg-white p-8 w-2/3 shadow-lg lg:col-span-3 lg:p-12">
+           <div class="text-center mb-4">
+            <h1>Register</h1>
+           </div>
+            <form  class="space-y-4" #userForm="ngForm" (submit)="onSubmit(userForm)">
+                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <div>
+                        <label class="sr-only" for="username">Username</label>
+                        <input class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Username"
+                        type="text" id="username" required [(ngModel)]="user.username" name="username" />
+                    </div>
+
+                    <div>
+                        <label class="sr-only" for="password">Password</label>
+                        <input class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Password"
+                            type="password"  id="firstName" required [(ngModel)]="user.password" name="password" />
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <button type="submit"
+                        class="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</section>

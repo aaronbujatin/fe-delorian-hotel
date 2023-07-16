@@ -1,0 +1,144 @@
+<app-headertwo></app-headertwo>
+
+<div class="bg-[#E4DCCB]">
+  <div
+    class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5 container mx-auto font-['Work_Sans'] ">
+    <!--Card 1-->
+    <div class="rounded overflow-hidden shadow-lg bg-[#FCFAEE]">
+      <img class="w-full md:h-2/5"
+        src="https://images.pexels.com/photos/276671/pexels-photo-276671.jpeg?auto=compress&cs=tinysrgb&w=1600"
+        alt="Mountain">
+      <div class="px-6 py-4">
+        <span
+          class="inline-block px-2 py-1 leading-none bg-[#9D9178] text-white rounded-full font-semibold uppercase tracking-wide text-xs">Highlight</span>
+        <div class="font-bold text-xl mb-2 text-[#0A0A0A]">Standard</div>
+        <p class="text-[#0A0A0A] text-base">
+          Enjoy a well-earned night’s sleep in a Grand Deluxe Room. Spacious and impeccably stylish with a dash of
+          timeless grand dame glamour, cozy up into fine cotton linens, comfy duvet and soft pillows on a king sized
+          bed.
+        </p>
+      </div>
+      <div class="px-6 pt-4 pb-2">
+        <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Amenities</h2>
+        <ul class="max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+          <li>
+            Complimentary Wi-Fi access
+          </li>
+          <li>
+            Senso Memory Foam Mattress
+          </li>
+          <li>
+            Electronic Lighting System
+          </li>
+          <li>
+            Remote-control LCD TV with cable channels
+          </li>
+          <li>
+            Electronic Lighting System
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-4 mx-3 flex justify-between items-center text-sm text-gray-600 border-t md:mt-4">
+        <div class="flex">
+          <h2 class="text-[#0A0A0A] text-xl font-medium">{{roomStandard | currency : 'Php '}}</h2>
+        </div>
+        <button
+          class="text-white border border-white bg-[#9D9178] px-4 py-2 rounded tracking-widest hover:bg-opacity-70 mx-2"
+          routerLink="/bookings">Get started</button>
+      </div>
+    </div>
+
+    <!--Card 2-->
+    <div class="rounded overflow-hidden shadow-lg bg-[#FCFAEE]">
+      <img class="w-full md:h-2/5"
+        src="https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg?auto=compress&cs=tinysrgb&w=1600"
+        alt="Mountain">
+      <div class="px-6 py-4">
+        <span
+          class="inline-block px-2 py-1 leading-none bg-[#9D9178] text-white rounded-full font-semibold uppercase tracking-wide text-xs">Highlight</span>
+        <div class="font-bold text-xl mb-2 text-[#0A0A0A]">Deluxe</div>
+        <p class="text-[#0A0A0A] text-base">
+          Fancy an elevated hotel experience? Our superior 40 square meters deluxe room features elegant traditional
+          Filipino interiors that creates a sensation of timeless comfort.
+        </p>
+      </div>
+      <div class="px-6 pt-4 pb-2">
+        <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Amenities</h2>
+        <ul class="max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+          <li>
+            SPA room
+          </li>
+          <li>
+            Ving Card door lock system
+          </li>
+          <li>
+            Lounge Area
+          </li>
+          <li>
+            Electronic Lighting System
+          </li>
+          <li>
+            The Executive Club access
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-4 mx-3 flex justify-between items-center text-sm text-gray-600 border-t md:mt-4">
+        <div class="flex">
+          <h2 class="text-[#0A0A0A] text-xl font-medium">{{roomDeluxe| currency : 'Php '}}</h2>
+        </div>
+        <button
+          class="text-white border border-white bg-[#9D9178] px-4 py-2 rounded tracking-widest hover:bg-opacity-70 mx-2"
+          routerLink="/bookings">Get started</button>
+      </div>
+    </div>
+
+    <!--Card 3-->
+    <div class="rounded overflow-hidden shadow-lg bg-[#FCFAEE]">
+      <img class="w-full md:h-2/5"
+        src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1600"
+        alt="Mountain">
+      <div class="px-6 py-4">
+        <span
+          class="inline-block px-2 py-1 leading-none bg-[#9D9178] text-white rounded-full font-semibold uppercase tracking-wide text-xs">Highlight</span>
+        <div class="font-bold text-xl mb-2 text-[#0A0A0A]">Suite</div>
+        <p class="text-[#0A0A0A] text-base">
+          A union of historical splendor, modern convenience and comfort, our Heritage Suites are known for their
+          elegant interiors that continue to entice guests with their old charm.
+        </p>
+      </div>
+      <div class="px-6 pt-4 pb-2">
+        <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Amenities</h2>
+        <ul class="max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+          <li>
+            Mini Bar
+          </li>
+          <li>
+            Balcony with a stunning view of the Manila Bay
+          </li>
+          <li>
+            4 Hour Butler service
+          </li>
+          <li>
+            Well-equipped kitchen
+          </li>
+          <li>
+            Master bedroom with a dressing room
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-4 mx-3 flex justify-between items-center text-sm text-gray-600 border-t md:mt-4">
+        <div class="flex">
+          <h2 class="text-[#0A0A0A] text-xl font-medium">{{roomSuite | currency : 'Php '}}</h2>
+        </div>
+        <button
+          class="text-white border border-white bg-[#9D9178] px-4 py-2 rounded tracking-widest hover:bg-opacity-70 mx-2"
+          routerLink="/bookings">Get started</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

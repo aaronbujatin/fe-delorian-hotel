@@ -1,0 +1,271 @@
+<app-headertwo></app-headertwo>
+
+<div class="bg-[#E4DCCB] max-h-screen pb-4">
+  <div class="container mx-auto">
+    <div class="flex flex-row mx-auto px-10 pt-4 justify-evenly font-['Trebuchet_MS']">
+      <form class="shadow-lg border rounded p-8 w-8/12 bg-[#FCFAEE] text-[#333333] font-['Trebuchet_MS']"
+        #guestForm="ngForm" (submit)="onSubmit(guestForm)">
+        <h1 class="text-2xl text-center mb-2 font-medium text-[#333333]">Guest Details</h1>
+        <h1 class="pb-2 text-xl font-medium text-[#1D1D1F]">Contact info</h1>
+        <div class="grid md:grid-cols-2 md:gap-6">
+          <div class="relative z-0 w-full mb-4 form-group">
+            <div class="relative mb-3">
+              <input type="text" id="firstName" required [(ngModel)]="guest.firstName" name="firstName"
+                #firstName="ngModel"
+                class="peer m-0 block h-[58px] w-full rounded bg-[#FFFFFF] border border-solid border-[#858585] focus:ring-0 focus:border-[#858585]  bg-clip-padding px-3 py-4 text-base font-normal leading-tight text-neutral-700 transition duration-300 ease-linear placeholder:text-transparent focus:border-primary focus:pb-[0.625rem] focus:pt-[1.625rem] focus:text-neutral-700 focus:outline-none peer-focus:text-primary dark:border-neutral-600 dark:text-neutral-200 dark:focus:border-primary dark:peer-focus:text-primary [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem]"
+                id="firstName" placeholder="name@example.com" />
+              <div *ngIf="firstName.errors?.['required'] && (firstName.dirty || firstName.touched)"
+                class="text-red-700">
+                Firstname is required.
+              </div>
+              <label for="firstName"
+                class="text-[#333333] pointer-events-none absolute left-0 top-0 origin-[0_0] border border-solid border-transparent px-3 py-4 transition-[opacity,_transform] duration-200 ease-linear peer-focus:-translate-y-2 peer-focus:translate-x-[0.15rem] peer-focus:scale-[0.85] peer-focus:text-primary peer-[:not(:placeholder-shown)]:-translate-y-2 peer-[:not(:placeholder-shown)]:translate-x-[0.15rem] peer-[:not(:placeholder-shown)]:scale-[0.85] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">First
+                name</label>
+            </div>
+          </div>
+          <div class="relative mb-3">
+            <input type="text" id="lastName" required [(ngModel)]="guest.lastName" name="lastName" #lastName="ngModel"
+              class="peer m-0 block h-[58px] w-full rounded bg-[#FFFFFF] border border-solid border-[#858585] focus:ring-0 focus:border-[#858585]  bg-clip-padding px-3 py-4 text-base font-normal leading-tight text-neutral-700 transition duration-300 ease-linear placeholder:text-transparent focus:border-primary focus:pb-[0.625rem] focus:pt-[1.625rem] focus:text-neutral-700 focus:outline-none peer-focus:text-primary dark:border-neutral-600 dark:text-neutral-200 dark:focus:border-primary dark:peer-focus:text-primary [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem]"
+              id="lastName" placeholder="name@example.com" />
+            <div *ngIf="lastName.errors?.['required'] && (lastName.dirty || lastName.touched)" class="text-red-700">
+              Lastname is required.
+            </div>
+            <label for="lastName"
+              class="text-[#333333] pointer-events-none absolute left-0 top-0 origin-[0_0] border border-solid border-transparent px-3 py-4 transition-[opacity,_transform] duration-200 ease-linear peer-focus:-translate-y-2 peer-focus:translate-x-[0.15rem] peer-focus:scale-[0.85] peer-focus:text-primary peer-[:not(:placeholder-shown)]:-translate-y-2 peer-[:not(:placeholder-shown)]:translate-x-[0.15rem] peer-[:not(:placeholder-shown)]:scale-[0.85] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Last
+              name</label>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 md:gap-6">
+          <div class="relative z-0 w-full mb-6 form-group">
+            <div class="relative mb-3">
+              <input type="email" id="email" required [(ngModel)]="guest.email" name="email" #email="ngModel"
+                class="peer m-0 block h-[58px] w-full rounded bg-[#FFFFFF] border border-solid border-[#858585] focus:ring-0 focus:border-[#858585]  bg-clip-padding px-3 py-4 text-base font-normal leading-tight text-neutral-700 transition duration-300 ease-linear placeholder:text-transparent focus:border-primary focus:pb-[0.625rem] focus:pt-[1.625rem] focus:text-neutral-700 focus:outline-none peer-focus:text-primary dark:border-neutral-600 dark:text-neutral-200 dark:focus:border-primary dark:peer-focus:text-primary [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem]"
+                id="email" placeholder="name@example.com" />
+              <div *ngIf="email.errors?.['required'] && (email.dirty || email.touched)" class="text-red-700">
+                Email is required.
+              </div>
+              <label for="email"
+                class="text-[#333333] pointer-events-none absolute left-0 top-0 origin-[0_0] border border-solid border-transparent px-3 py-4 transition-[opacity,_transform] duration-200 ease-linear peer-focus:-translate-y-2 peer-focus:translate-x-[0.15rem] peer-focus:scale-[0.85] peer-focus:text-primary peer-[:not(:placeholder-shown)]:-translate-y-2 peer-[:not(:placeholder-shown)]:translate-x-[0.15rem] peer-[:not(:placeholder-shown)]:scale-[0.85] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Email</label>
+            </div>
+          </div>
+          <div class="relative mb-3">
+            <input type="number" id="phoneNumber" required [(ngModel)]="guest.phoneNumber" name="phoneNumber"
+              #phoneNumber="ngModel"
+              class="peer m-0 block h-[58px] w-full rounded bg-[#FFFFFF] border border-solid border-[#858585] focus:ring-0 focus:border-[#858585]  bg-clip-padding px-3 py-4 text-base font-normal leading-tight text-neutral-700 transition duration-300 ease-linear placeholder:text-transparent focus:border-primary focus:pb-[0.625rem] focus:pt-[1.625rem] focus:text-neutral-700 focus:outline-none peer-focus:text-primary dark:border-neutral-600 dark:text-neutral-200 dark:focus:border-primary dark:peer-focus:text-primary [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem]"
+              id="phoneNumber" placeholder="name@example.com" />
+            <div *ngIf="phoneNumber.errors?.['required'] && (phoneNumber.dirty || phoneNumber.touched)"
+              class="text-red-700">
+              Phone number is required.
+            </div>
+            <label for="phoneNumber"
+              class="text-[#333333] pointer-events-none absolute left-0 top-0 origin-[0_0] border border-solid border-transparent px-3 py-4 transition-[opacity,_transform] duration-200 ease-linear peer-focus:-translate-y-2 peer-focus:translate-x-[0.15rem] peer-focus:scale-[0.85] peer-focus:text-primary peer-[:not(:placeholder-shown)]:-translate-y-2 peer-[:not(:placeholder-shown)]:translate-x-[0.15rem] peer-[:not(:placeholder-shown)]:scale-[0.85] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Phone
+              number</label>
+          </div>
+        </div>
+        <div>
+          <h1 class="pb-2  text-xl font-medium">Address</h1>
+          <div class="grid md:grid-cols-2 md:gap-6 form-group">
+            <div class="relative z-0 w-full mb-6 ">
+              <div class="relative mb-3">
+                <input type="text" id="state" required [(ngModel)]="guest.state" name="state" #state="ngModel"
+                  class="peer m-0 block h-[58px] w-full rounded bg-[#FFFFFF] border border-solid border-[#858585] focus:ring-0 focus:border-[#858585]  bg-clip-padding px-3 py-4 text-base font-normal leading-tight text-neutral-700 transition duration-300 ease-linear placeholder:text-transparent focus:border-primary focus:pb-[0.625rem] focus:pt-[1.625rem] focus:text-neutral-700 focus:outline-none peer-focus:text-primary dark:border-neutral-600 dark:text-neutral-200 dark:focus:border-primary dark:peer-focus:text-primary [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem]"
+                  id="state" placeholder="name@example.com" />
+                <div *ngIf="state.errors?.['required'] && (state.dirty || state.touched)" class="text-red-700">
+                  State is required.
+                </div>
+                <label for="address"
+                  class="text-[#333333] pointer-events-none absolute left-0 top-0 origin-[0_0] border border-solid border-transparent px-3 py-4 transition-[opacity,_transform] duration-200 ease-linear peer-focus:-translate-y-2 peer-focus:translate-x-[0.15rem] peer-focus:scale-[0.85] peer-focus:text-primary peer-[:not(:placeholder-shown)]:-translate-y-2 peer-[:not(:placeholder-shown)]:translate-x-[0.15rem] peer-[:not(:placeholder-shown)]:scale-[0.85] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">State</label>
+              </div>
+            </div>
+            <div class="relative z-0 w-full mb-6 ">
+              <div class="relative mb-3">
+                <input type="text" id="city" required [(ngModel)]="guest.city" name="city" #city="ngModel"
+                  class="peer m-0 block h-[58px] w-full rounded bg-[#FFFFFF] border border-solid border-[#858585] focus:ring-0 focus:border-[#858585]  bg-clip-padding px-3 py-4 text-base font-normal leading-tight text-neutral-700 transition duration-300 ease-linear placeholder:text-transparent focus:border-primary focus:pb-[0.625rem] focus:pt-[1.625rem] focus:text-neutral-700 focus:outline-none peer-focus:text-primary dark:border-neutral-600 dark:text-neutral-200 dark:focus:border-primary dark:peer-focus:text-primary [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem]"
+                  id="city" placeholder="name@example.com" />
+                <div *ngIf="city.errors?.['required'] && (city.dirty || city.touched)" class="text-red-700">
+                  City is required.
+                </div>
+                <label for="city"
+                  class="text-[#333333] pointer-events-none absolute left-0 top-0 origin-[0_0] border border-solid border-transparent px-3 py-4 transition-[opacity,_transform] duration-200 ease-linear peer-focus:-translate-y-2 peer-focus:translate-x-[0.15rem] peer-focus:scale-[0.85] peer-focus:text-primary peer-[:not(:placeholder-shown)]:-translate-y-2 peer-[:not(:placeholder-shown)]:translate-x-[0.15rem] peer-[:not(:placeholder-shown)]:scale-[0.85] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">City</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h1 class="pb-2 text-xl font-medium">Additional Details and Preferences (Optional)</h1>
+          <div class="relative z-0 w-full mb-2 ">
+            <div class="relative">
+              <input type="text" id="additionalDetails" required [(ngModel)]="guest.additionalDetails"
+                name="additionalDetails" #additionalDetails="ngModel"
+                class="peer m-0 block h-[58px] w-full rounded bg-[#FFFFFF] border border-solid border-[#858585] focus:ring-0 focus:border-[#858585]  bg-clip-padding px-3 py-4 text-base font-normal leading-tight text-neutral-700 transition duration-300 ease-linear placeholder:text-transparent focus:border-primary focus:pb-[0.625rem] focus:pt-[1.625rem] focus:text-neutral-700 focus:outline-none peer-focus:text-primary dark:border-neutral-600 dark:text-neutral-200 dark:focus:border-primary dark:peer-focus:text-primary [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem]"
+                id="additionalDetails" placeholder="name@example.com" />
+
+              <label for="additionalDetails"
+                class="text-[#333333] pointer-events-none absolute left-0 top-0 origin-[0_0] border border-solid border-transparent px-3 py-4 transition-[opacity,_transform] duration-200 ease-linear peer-focus:-translate-y-2 peer-focus:translate-x-[0.15rem] peer-focus:scale-[0.85] peer-focus:text-primary peer-[:not(:placeholder-shown)]:-translate-y-2 peer-[:not(:placeholder-shown)]:translate-x-[0.15rem] peer-[:not(:placeholder-shown)]:scale-[0.85] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Write
+                something</label>
+            </div>
+          </div>
+        </div>
+        <div class="border-b border-[#858585] py-2"></div>
+        <div class="py-4">
+          <h1 class="pb-2 text-xl font-medium">Payment Information</h1>
+          <div class="flex flex-row space-x-2 opacity-70">
+            <img src="/assets/card/visa.png" height="50px" width="50px" alt="visa">
+            <img src="/assets/card/ae.png" height="50px" width="50px" alt="visa">
+            <img src="/assets/card/mc.png" height="50px" width="50px" alt="visa">
+            <img src="/assets/card/sc.png" height="50px" width="50px" alt="visa">
+            <img src="/assets/card/pp.png" height="50px" width="50px" alt="visa">
+          </div>
+          <div class="relative z-0 w-full mb-2 ">
+            <div class="relative">
+              <input type="number" inputmode="numeric" pattern="[0-9\s]{9,19}" autocomplete="cc-number" maxlength="19"
+                id="cardNumber" required id="state" required [(ngModel)]="guest.cardNumber" name="cardNumber"
+                #cardNumber="ngModel" name="cardNumber"
+                class="peer m-0 block h-[58px] w-full rounded bg-[#FFFFFF] border border-solid border-[#858585] focus:ring-0 focus:border-[#858585]  bg-clip-padding px-3 py-4 text-base font-normal leading-tight text-neutral-700 transition duration-300 ease-linear placeholder:text-transparent focus:border-primary focus:pb-[0.625rem] focus:pt-[1.625rem] focus:text-neutral-700 focus:outline-none peer-focus:text-primary dark:border-neutral-600 dark:text-neutral-200 dark:focus:border-primary dark:peer-focus:text-primary [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem]"
+                placeholder="name@example.com" />
+
+              <div *ngIf="cardNumber.errors?.['required'] && (cardNumber.dirty || cardNumber.touched)"
+                class="text-red-700">
+                Card number is required.
+              </div>
+              <p>Format : xxx xxx xxx</p>
+              <label for="cardNumber"
+                class="text-[#333333] pointer-events-none absolute left-0 top-0 origin-[0_0] border border-solid border-transparent px-3 py-4 transition-[opacity,_transform] duration-200 ease-linear peer-focus:-translate-y-2 peer-focus:translate-x-[0.15rem] peer-focus:scale-[0.85] peer-focus:text-primary peer-[:not(:placeholder-shown)]:-translate-y-2 peer-[:not(:placeholder-shown)]:translate-x-[0.15rem] peer-[:not(:placeholder-shown)]:scale-[0.85] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Card
+                Number</label>
+            </div>
+          </div>
+        </div>
+        <button type="submit"
+          class="text-white border border-white bg-[#9D9178] px-4 py-2 rounded tracking-widest mx-2 "
+          [disabled]="guestForm.form.invalid">Submit</button>
+      </form>
+      <div class="w-[25%] h-1/3 bg-[#F1EEDF] shadow-md border rounded p-4 text-[#333333] font-['Trebuchet_MS']">
+        <h1 class="font-medium text-2xl">Your stay</h1>
+        <div class="flex flex-row mx-auto justify-start space-x-6 pt-3">
+          <div>
+            <h1 class="font-bold">Check-in</h1>
+            <h4>After 2:00 PM</h4>
+          </div>
+          <div>
+            <h1 class="font-bold">Check-out</h1>
+            <h4>Before 12:00 PM</h4>
+          </div>
+        </div>
+        <div class="border-b border-[#9D9178] pt-5"></div>
+        <div>
+          <h1 class="pt-2">From : {{dateArrive | date : 'fullDate' }}</h1>
+          <h1 class="pt-2">To : {{dateDepart | date : 'fullDate' }}</h1>
+        </div>
+        <div class="flex flex-row justify-between py-2">
+          <h1 class="font-medium">Room Type : {{room.type}}</h1>
+          <h1>{{room.price | currency : 'Php' }}</h1>
+        </div>
+        <h4>{{numberOfNights}} nights</h4>
+        <div class="border-b border-[#9D9178] pt-5"></div>
+        <div class="flex flex-wrap justify-between pt-2">
+          <h1 class="text-xl font-medium">Total : </h1>
+          <p class="text-xl font-medium">{{totalPayment | currency : 'Php '}}</p>
+        </div>
+      </div>
+      <!-- <form class="shadow-lg border  rounded p-8 max-w-3xl mx-auto bg-[#FCFAEE] text-[#1D1D1F] " #guestForm="ngForm" (ngSubmit)="onSubmit(guestForm)">
+        <h1 class="text-2xl text-center mb-2 font-semibold text-[#1D1D1F]">Guest Details</h1>
+        <h1 class="pb-2 text-xl font-semibold text-[#1D1D1F]">Contact info</h1>
+        <div class="grid md:grid-cols-2 md:gap-6">
+          <div class="relative z-0 w-full mb-6 form-group">
+            <input type="text"  id="firstName" required [(ngModel)]="guest.firstName" name="firstName"
+              class="form-control block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#9D9178] peer"
+              placeholder=" " #firstName="ngModel" />
+            <div *ngIf="firstName.errors?.['required'] && (firstName.dirty || firstName.touched)" class="text-red-700">
+              Firstname is required.
+            </div>
+    
+            <label for="firstName"
+              class="peer-focus:font-medium absolute text-sm text-black dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#9D9178] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First
+              name</label>
+          </div>
+          <div class="relative z-0 w-full mb-6 form-group">
+            <input type="text"  id="lastName" required [(ngModel)]="guest.lastName" name="lastName"
+              class="form-control block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#9D9178] peer"
+              placeholder=" " #lastName="ngModel" />
+            <div *ngIf="lastName.errors?.['required'] && (lastName.dirty || lastName.touched)" class="text-red-700">
+              Lastname is required.
+            </div>
+            <label for="lastName"
+              class="peer-focus:font-medium absolute text-sm text-[#333333] font-['Trebuchet_MS'] dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#9D9178] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last
+              name</label>
+          </div>
+        </div>
+    
+        <div class="grid md:grid-cols-2 md:gap-6">
+          <div class="relative z-0 w-full mb-6 form-group">
+            <input type="text"  id="email" required [(ngModel)]="guest.email" name="email"
+              class="form-control block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#9D9178] peer"
+              placeholder=" " #email="ngModel" />
+            <div *ngIf="email.errors?.['required'] && (email.dirty || email.touched)" class="text-red-700">
+              Email is required.
+            </div>
+            <label for="email"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#9D9178] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email
+              address</label>
+          </div>
+          <div class="relative z-0 w-full mb-6 form-group">
+            <input type="number"  id="phoneNumber" required [(ngModel)]="guest.phoneNumber"
+              name="phoneNumber"
+              class="form-control block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 focus:outline-none focus:ring-0 focus:border-[#9D9178] peer"
+              placeholder=" " #phoneNumber="ngModel" />
+            <div *ngIf="phoneNumber.errors?.['required'] && (phoneNumber.dirty || phoneNumber.touched)"
+              class="text-red-700">
+              Phone number is required.
+            </div>
+            <label for="phoneNumber" 
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#9D9178] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone
+              number</label>
+          </div>
+        </div>
+        <div>
+          <h1 class="pb-2  text-xl font-semibold">Address</h1>
+          <div class="grid md:grid-cols-2 md:gap-6 form-group">
+            <div class="relative z-0 w-full mb-6 ">
+              <input type="text"  id="address" required [(ngModel)]="guest.address"
+                name="address"
+                class="form-control block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#9D9178] peer"
+                placeholder=" " #address="ngModel" />
+              <div *ngIf="address.errors?.['required'] && (address.dirty || address.touched)" class="text-red-700">
+                Address is required.
+              </div>
+              <label for="address"
+                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#9D9178] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Address</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 ">
+              <input type="text"  id="city" required [(ngModel)]="guest.city" name="city"
+                class="form-control block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#9D9178] peer"
+                placeholder=" " #city="ngModel" />
+              <div *ngIf="city.errors?.['required'] && (city.dirty || city.touched)" class="text-red-700">
+                City is required.
+              </div>
+              <label for="city"
+                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#9D9178] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">City</label>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h1 class="pb-2 text-xl font-semibold">Additional Details and Preferences</h1>
+          <div class="relative z-0 w-full mb-6 ">
+            <input type="textarea" id="additionalDetails" 
+              [(ngModel)]="guest.additionalDetails" name="additionalDetails"
+              class="form-control block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#9D9178] peer"
+              placeholder=" "  />
+            <label for="additionalDetails"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#9D9178] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Please
+              note your requests or special needs</label>
+          </div>
+        </div>
+        <button type="submit" class="text-white border border-white bg-[#9D9178] px-4 py-2 rounded tracking-widest mx-2 "
+           [disabled]="!guestForm.form.invalid">Submit</button>
+      </form> -->
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
